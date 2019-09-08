@@ -2,11 +2,14 @@ package me.exp.graphqljava.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Table(name="country")
 @Entity
@@ -19,9 +22,8 @@ public class Country {
 	@Column(name="population")
 	String population;
 	
-//	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-//	@JoinColumn(name="country_name")
-	@Transient
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="country_nm")
 	List<State> states;
 	
 
