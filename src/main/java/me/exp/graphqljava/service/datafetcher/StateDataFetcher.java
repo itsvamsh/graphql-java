@@ -19,6 +19,6 @@ public class StateDataFetcher implements DataFetcher<State> {
 
 		System.err.println("state df invoked...... ");
 		String stateName = environment.getArgument("name");
-		return stateRepository.findOne(stateName);
+		return stateRepository.getOne(stateName);
 	}
 }
