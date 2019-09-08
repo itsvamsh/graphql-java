@@ -19,7 +19,7 @@ public class CityDataFetcher implements DataFetcher<City>{
 
 		String cityName = environment.getArgument("name");
 
-		return cityRepository.findOne(cityName);
+		return cityRepository.getOne(cityName);
 	}
 }
 

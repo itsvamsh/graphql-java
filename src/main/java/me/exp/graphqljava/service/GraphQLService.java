@@ -86,8 +86,9 @@ public class GraphQLService {
     	
     	countryRepository.save(usa); 
     	stateRepository.save(mi); 
-    	stateRepository.save(ca); 
     	stateRepository.save(fl);
+    	stateRepository.save(ca); 
+
     	
     	Stream.of(
     			new City("BayArea",   "7200000", ca ), 

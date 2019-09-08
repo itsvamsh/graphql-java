@@ -30,7 +30,7 @@ public class State {
 	
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="state_name")
+	@JoinColumn(name="state_nm") 
 	List<City> cities;
 
 	//@Column(name="country")
