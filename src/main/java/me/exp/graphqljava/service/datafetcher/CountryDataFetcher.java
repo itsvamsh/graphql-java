@@ -17,7 +17,7 @@ public class CountryDataFetcher implements DataFetcher<Country> {
 	public Country get(DataFetchingEnvironment environment) {
 
 		String countryName = environment.getArgument("name");
-		return countryRepository.findOne(countryName);
+		return countryRepository.getOne(countryName);
 	}
 
 }

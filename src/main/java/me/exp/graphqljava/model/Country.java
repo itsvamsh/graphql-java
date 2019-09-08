@@ -25,7 +25,7 @@ public class Country {
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="country_name")
-	@Transient
+	
 	List<State> states;
 	
 
