@@ -76,15 +76,16 @@ public class GraphQLService {
 
     private void loadData() {
     	Country usa = new Country ("USA", "330000000");
+    	Country usa1 = new Country ("USA", "330000000");
+    	Country usa2 = new Country ("USA", "330000000");
     	//Country usa2 = new Country ("USA2", "330000000");
     	
     	State ca = new State("CA", "39900000", usa);
-    	State fl = new State("FL", "21300000", usa);
-    	State mi = new State("MI", "11000000", usa);
+    	State fl = new State("FL", "21300000", usa1);
+    	State mi = new State("MI", "11000000", usa2);
     	
-    	countryRepository.save(usa);
+    	countryRepository.save(usa); 
     	stateRepository.save(mi); 
-    	stateRepository.flush();  
     	stateRepository.save(ca); 
     	stateRepository.save(fl);
     	
@@ -102,7 +103,7 @@ public class GraphQLService {
     private void loadDataq1() {
     	Country india = new Country ("India", "1330000000");
     	State ka = new State("KA", "64000000",  india);
-    	State dl = new State("dl", "19000000",  india);
+    	State dl = new State("DL", "19000000",  india);
     	State mh = new State("MH", "114200000", india);
     	
     	countryRepository.save(india);

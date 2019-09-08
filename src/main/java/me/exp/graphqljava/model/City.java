@@ -22,17 +22,6 @@ public class City {
 		//@Column(name="state") //org.hibernate.AnnotationException: @Column(s) not allowed on a @ManyToOne property
 		State state;
 		
-		@Version
-	    private int version;
-		
-		
-		public int getVersion() {
-			return version;
-		}
-
-		public void setVersion(int version) {
-			this.version = version;
-		}
 		
 		public City() { }
 
