@@ -76,25 +76,29 @@ public class GraphQLService {
 
     private void loadData() {
     	Country usa = new Country ("USA", "330000000");
-    	Country usa1 = new Country ("USA", "330000000");
-    	Country usa2 = new Country ("USA", "330000000");
     	//Country usa2 = new Country ("USA2", "330000000");
     	
     	State ca = new State("CA", "39900000", usa);
-    	State fl = new State("FL", "21300000", usa1);
-    	State mi = new State("MI", "11000000", usa2);
+    	State fl = new State("FL", "21300000", usa);
+    	State mi = new State("MI", "11000000", usa);
+    	State ny = new State("NY", "19500000", usa);
+    	State ma = new State("MA",  "6900000", usa);
+
     	
     	countryRepository.save(usa); 
     	stateRepository.save(mi); 
     	stateRepository.save(ca); 
     	stateRepository.save(fl);
+    	stateRepository.save(ny);
+    	stateRepository.save(ma);
     	
     	Stream.of(
     			new City("BayArea",   "7200000", ca ), 
     			new City("LA",        "3900000", ca ),
     			new City("Miami",      "466000", fl ), 
     			new City("Detriot",    "630000", mi ), 
-    			new City("RapidsCity", "188000", mi )  
+    			new City("RapidsCity", "188000", mi ),  
+    			new City("New York City", "8600000", ny )  
     			 ).forEach(city -> 
     	            cityRepository.save(city));
     	

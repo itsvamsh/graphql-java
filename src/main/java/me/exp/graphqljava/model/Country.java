@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Table(name="country")
 @Entity
@@ -25,11 +25,9 @@ public class Country {
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="country_name")
-	//@Transient
-	List<State> states;
+	List<State> states; 
 	
-
-	public Country( ) { }
+	public Country( ) { }	
 	
 	public Country(String name, String population) {
 		super();
